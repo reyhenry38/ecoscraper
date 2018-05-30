@@ -10,7 +10,7 @@ let scrape = async () => {
     const page = await browser.newPage();
 
     await page.goto('https://www.foreyes.com/sunglasses');
-    await page.click('#default > div > div > div > div > section > div:nth-child(2) > ol > li:nth-child(1) > article > div.image_container > a > img');
+    await page.click('#load-products > div:nth-child(1) > div > div > div > div.glass-wrap').next();
     await page.waitFor(1000);
 
     const result = await page.evaluate(() => {
@@ -31,3 +31,4 @@ let scrape = async () => {
 scrape().then((value) => {
     console.log(value); // Success!
 });
+
